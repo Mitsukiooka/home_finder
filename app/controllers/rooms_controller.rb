@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    @room = Room.new(room_pramas)
+    @room = Room.new(room_params)
     if @room.save
       redirect_to room_path(@room.id)
     else
@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
   end
 
   def update
-    if @room.update(room_pramas)
+    if @room.update(room_params)
       redirect_to room_path(@room.id)
     else
       render 'edit'
