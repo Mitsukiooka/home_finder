@@ -1,0 +1,8 @@
+-if owner_signed_in?
+  %li
+    = link_to 'Logout', destroy_owner_session_path
+-else
+  %li
+    = link_to 'Sign Up', new_owner_registration_path
+  %li
+    = link_to 'Login', new_owner_session_path
