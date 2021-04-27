@@ -10,3 +10,4 @@
     =image_tag image.variant(gravity: :center, resize:"50x50^", crop:"350x350+0+0").processed
 =link_to '貸し部屋一覧へ戻る', owner_rooms_path
 =link_to '情報を編集', edit_owner_room_path(@room.id)
+=link_to '情報を削除', owner_room_path(@room.id), method: :delete, data: { confirm: '本当に削除しますか？' }
