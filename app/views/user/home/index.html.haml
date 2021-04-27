@@ -1,0 +1,13 @@
+%h1
+  Home Finder
+.menu
+  -if user_signed_in?
+    %h2
+      =link_to 'ログアウト', destroy_user_session_path
+      %p
+        こちらはユーザー用ページです。
+  -else
+    %h2
+      = link_to 'ユーザー登録', new_user_registration_path
+    %h2
+      = link_to 'ユーザーログイン', new_user_session_path

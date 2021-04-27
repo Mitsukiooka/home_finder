@@ -1,16 +1,21 @@
 %h1
   Home Finder
--if owner_signed_in?
-  %h2
-    =link_to '貸し部屋一覧', owner_rooms_path
-  %h2
+.menu
+  -if owner_signed_in?
+    %h2
+      =link_to '貸し部屋一覧', owner_rooms_path
+    -if current_owner.owner_profile.present?
+      %h2
+        =link_to 'オーナー情報', owner_owner_profile_path(current_owner.owner_profile.id)
+    -else
+      %h2
+        =link_to 'オーナー情報作成', new_owner_owner_profile_path
     =link_to 'ログアウト', destroy_owner_session_path
-  -if current_owner.owner_profile.present?
-    =link_to 'オーナー情報', owner_owner_profile_path(current_owner.owner_profile.id)
   -else
-    =link_to 'オーナー情報作成', new_owner_owner_profile_path
--else
-  %h2
-    = link_to 'オーナー登録', new_owner_registration_path
-  %h2
-    = link_to 'オーナーログイン', new_owner_session_path
+    %h2
+      = link_to 'オーナー登録', new_owner_registration_path
+    %h2
+      = link_to 'オーナーログイン', new_owner_session_path
+-if owner_signed_in?
+  .body
+    %p="公開中の貸し部屋：#{current_owner.rooms.size}件"
