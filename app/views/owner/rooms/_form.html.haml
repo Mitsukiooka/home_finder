@@ -1,4 +1,4 @@
-=bootstrap_form_with model: @room, local: true do |f|
+=bootstrap_form_with model: [:owner, @room], local: true do |f|
   =f.text_field :name
   =f.text_field :address
   =f.number_field :rent

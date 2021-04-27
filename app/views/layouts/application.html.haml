@@ -8,5 +8,14 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    =render 'header'
+    -if notice.present?
+      .container
+        %p.notice.alert.alert-success{:role => "alert"}
+          =notice
+    -if alert.present?
+      .container
+        %p.alert.alert-danger{:role => "alert"}
+          =alert
     = yield
   =javascript_include_tag "application"

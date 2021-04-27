@@ -1,0 +1,8 @@
+-if owner_signed_in?
+  %li
+    = link_to 'ログアウト', destroy_owner_session_path
+-else
+  %li
+    = link_to 'オーナー登録', new_owner_registration_path
+  %li
+    = link_to 'ログイン', new_owner_session_path
