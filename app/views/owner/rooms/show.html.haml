@@ -1,0 +1,10 @@
+%h1
+  #{@room.name}
+=@room.name
+=@room.address
+=@room.rent
+=@room.nearest_station 
+=@room.comment
+=@room.owner.email
+=link_to '貸し部屋一覧へ戻る', owner_rooms_path
+=link_to '情報を編集', edit_owner_room_path(@room.id)
