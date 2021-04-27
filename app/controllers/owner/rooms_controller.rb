@@ -47,7 +47,8 @@ class Owner::RoomsController < Owner::ApplicationController
       :address,
       :rent,
       :nearest_station,
-      :comment
+      :comment,
+      images:[]
     )
   end
 end
