@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   namespace :owner do
     root to: "home#index"
     resources :rooms
+    resources :owner_profiles, except: [:index]
   end
 end

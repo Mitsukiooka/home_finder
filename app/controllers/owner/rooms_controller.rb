@@ -1,7 +1,7 @@
 class Owner::RoomsController < Owner::ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   def index
-    @rooms = Room.all
+    @rooms = current_owner.rooms
   end
 
   def show
@@ -38,7 +38,7 @@ class Owner::RoomsController < Owner::ApplicationController
 
   private
   def set_room
-    @room = Room.find(params[:id])
+    @room = current_owner.rooms.find(params[:id])
   end
 
   def room_params
