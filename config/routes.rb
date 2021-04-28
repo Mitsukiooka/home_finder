@@ -12,7 +12,13 @@ Rails.application.routes.draw do
 
   namespace :user do
     root to: "home#index"
-    resources :rooms, only: [:index, :show]
+    resources :rooms, only: [:index, :show] do
+      member do
+        get 'application_new'
+        post 'create' => 'rooms#application_create', :as => 'application_create'
+        get 'sent' => 'rooms#application_sent', :as => 'application_sent'
+      end
+    end
     resources :user_profiles, except: [:index]
   end
 end

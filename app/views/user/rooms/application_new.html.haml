@@ -1,0 +1,10 @@
+%h2
+  申し込み
+=bootstrap_form_with model: [:user, @application], url: application_create_user_room_path(@room.id), local: true do |f|
+  =f.hidden_field :room_id, :value => @room.id
+  =f.text_field :user_name
+  =f.text_field :user_email
+  =f.text_field :user_phone_number
+  =f.text_area :comment
+  =f.submit
+=link_to '戻る', user_room_path(@room.id)

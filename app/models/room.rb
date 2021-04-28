@@ -2,6 +2,7 @@ class Room < ApplicationRecord
   include Enumerizable
 
   belongs_to :owner
+  has_many :applications
   has_many_attached :images
 
   validates :name, presence: true
