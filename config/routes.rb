@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   namespace :user do
     root to: "home#index"
+    resources :rooms, only: [:index, :show]
   end
 end

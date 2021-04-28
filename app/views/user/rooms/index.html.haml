@@ -1,0 +1,7 @@
+%h1
+  賃貸一覧
+-@rooms.each do |room|
+  =link_to room.name, user_room_path(room.id)
+  =room.address
+
+=link_to 'トップへ戻る', user_root_path
