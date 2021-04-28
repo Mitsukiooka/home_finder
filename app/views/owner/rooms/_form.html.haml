@@ -1,8 +1,10 @@
 =bootstrap_form_with model: [:owner, @room], local: true do |f|
   =f.text_field :name
   =f.text_field :address
+  =f.text_field :country
   =f.number_field :rent
   =f.text_field :nearest_station
   =f.text_area :comment
   =f.file_field :images, multiple: true
+  =f.select :status, Room.status.options
   =f.submit

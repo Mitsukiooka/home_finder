@@ -1,8 +1,11 @@
 -if owner_signed_in?
   %li
     = link_to 'ログアウト', destroy_owner_session_path
+-elsif user_signed_in?
+  %li
+    = link_to 'ログアウト', destroy_user_session_path
 -else
   %li
-    = link_to 'オーナー登録', new_owner_registration_path
+    = link_to 'お部屋をお探しの方はこちら', new_user_session_path
   %li
-    = link_to 'ログイン', new_owner_session_path
+    = link_to 'オーナーの方はこちら', new_owner_session_path

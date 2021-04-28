@@ -1,0 +1,6 @@
+ja:
+  enumerize:
+    room:
+      status:
+        active: 公開中
+        occupide: 契約済み

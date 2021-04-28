@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      owner: オーナー
+      user: ユーザー
+      room: 貸し部屋
+      owner_profile: オーナー情報
+      user_profile: ユーザー情報
+    attributes:
+      room:
+        name: 建物名
+        address: 住所
+        rent: 家賃
+        nearest_station: 最寄り駅
+        comment: 補足情報
+        status: ステータス
+        country: 国
