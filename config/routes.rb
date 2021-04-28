@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
   namespace :owner do
     root to: "home#index"
-    resources :rooms
+    resources :rooms do
+      member do
+        get 'application_show'
+        get 'application_edit'
+        post 'application_update'
+      end
+    end
     resources :owner_profiles, except: [:index]
   end
 
