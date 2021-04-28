@@ -1,0 +1,10 @@
+%h1
+  #{@user_profile.name}
+=@user_profile.name
+=@user_profile.gender
+=@user_profile.age
+=@user_profile.email
+=@user_profile.phone_number
+=@user_profile.description
+=link_to 'ユーザー情報を編集', edit_user_user_profile_path(@user_profile.id)
+=link_to 'トップへ戻る', user_root_path
