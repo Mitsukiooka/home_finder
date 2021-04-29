@@ -1,6 +1,6 @@
 class Owner::RoomsController < Owner::ApplicationController
   before_action :set_room, except: [:index]
-  before_action :set_application, only: [:application_show, :application_edit, :application_update]
+  before_action :set_application, only: [:application_show, :application_update]
   def index
     @rooms = current_owner.rooms
   end
@@ -40,14 +40,11 @@ class Owner::RoomsController < Owner::ApplicationController
   def application_show
   end
 
-  def application_edit
-  end
-
   def application_update
     if @application.update(application_params)
       redirect_to owner_room_path(@room.id)
     else
-      render 'application_edit'
+      render 'application_show'
     end
   end
 
@@ -70,6 +67,12 @@ class Owner::RoomsController < Owner::ApplicationController
       :status,
       :country,
       images:[]
+    )
+  end
+
+  def application_params
+    params[:application].permit(
+      :status
     )
   end
 end

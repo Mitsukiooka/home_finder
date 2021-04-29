@@ -6,6 +6,7 @@ ja:
       room: 貸し部屋
       owner_profile: オーナー情報
       user_profile: ユーザー情報
+      application: 内覧申し込み
     attributes:
       room:
         name: 建物名
@@ -15,3 +16,8 @@ ja:
         comment: 補足情報
         status: ステータス
         country: 国
+      application:
+        user_name: 申し込み者氏名
+        user_email: 申し込み者メールアドレス
+        user_phone_number: 申し込み者電話番号
+        status: ステータス

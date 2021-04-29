@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     resources :rooms do
       member do
         get 'application_show'
-        get 'application_edit'
-        post 'application_update'
+        post 'application_update', :as => 'application_update'
       end
     end
     resources :owner_profiles, except: [:index]

@@ -1,5 +1,12 @@
-%h1
-  #{@application.room.name}
-=@application.user_name
-=@application.user_email
-=@application.comment
+.body
+  %h1
+    #{@application.room.name}
+  =@application.user_name
+  =@application.user_email
+  =@application.comment
+.form
+  =bootstrap_form_with model: [:owner, @application], url: application_update_owner_room_path(@room.id, application_id: @application.id), method: :post, local: true do |f|
+    =f.select :status, Application.status.options
+    =f.submit
+
+=link_to '戻る', owner_room_path(@room.id)
