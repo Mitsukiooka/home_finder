@@ -12,5 +12,5 @@
 -if @application.nil?
   =link_to 'この部屋の内覧に申し込む', application_new_user_room_path(@room.id)
 -else
-  ="#{@application.status_text}"
+  ="オーナーの対応状況:#{@application.status_text}"
 =link_to '貸し部屋一覧へ戻る', user_rooms_path
