@@ -5,6 +5,7 @@ class User::RoomsController < User::ApplicationController
   end
 
   def show
+    @application = Application.find_by(user_id: current_user.id, room_id: @room.id)
   end
 
   def application_new
