@@ -1,5 +1,5 @@
 class Owner::RoomsController < Owner::ApplicationController
-  before_action :set_room, except: [:index]
+  before_action :set_room, except: [:index, :new, :create]
   before_action :set_application, only: [:application_show, :application_update]
   def index
     @rooms = current_owner.rooms

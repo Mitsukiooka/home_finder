@@ -46,7 +46,8 @@ class User::UserProfilesController < User::ApplicationController
       :age,
       :email,
       :phone_number,
-      :description
+      :description,
+      :country
     )
   end
 end

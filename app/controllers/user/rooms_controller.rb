@@ -1,7 +1,7 @@
 class User::RoomsController < User::ApplicationController
   before_action :set_room, except: [:index]
   def index
-    @rooms = Room.all.by_status
+    @rooms = Room.all.by_status.by_country(current_user.user_profile.country)
   end
 
   def show

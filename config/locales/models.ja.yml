@@ -16,6 +16,7 @@ ja:
         comment: 補足情報
         status: ステータス
         country: 国
+        images: 画像
       application:
         user_name: 申し込み者氏名
         user_email: 申し込み者メールアドレス

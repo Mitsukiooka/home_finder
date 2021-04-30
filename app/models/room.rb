@@ -6,8 +6,12 @@ class Room < ApplicationRecord
   has_many_attached :images
 
   validates :name, presence: true
+  validates :address, presence: true
+  validates :country, presence: true
 
   scope :by_status, ->{ where(status: :active) }
+  scope :by_country, ->(country){ where(country: country)}
 
   attr_accessor :image_blob_id
+
 end
