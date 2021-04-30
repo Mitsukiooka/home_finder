@@ -16,6 +16,7 @@ class User::RoomsController < User::ApplicationController
   def application_create
     @application = current_user.applications.build(application_params)
     if @application.save
+      ApplicationNoticeMailer.notice_mail(@room.owner, @application).deliver
       redirect_to application_sent_user_room_path(@room.id)
     else
       render 'application_new'
