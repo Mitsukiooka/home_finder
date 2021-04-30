@@ -1,7 +1,8 @@
 class User::RoomsController < User::ApplicationController
   before_action :set_room, except: [:index]
   def index
-    @rooms = Room.all.by_status.by_country(current_user.user_profile.country)
+    @q = Room.all.by_status.by_country(current_user.user_profile.country).ransack(params[:q])
+    @rooms = @q.result(distinct: true)
   end
 
   def show

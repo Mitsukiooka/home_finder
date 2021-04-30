@@ -1,7 +1,14 @@
 %h1
   賃貸一覧
+=search_form_for [:user, @q] do |f|
+  = f.label :address, "住所"
+  = f.search_field :address_cont
+  = f.label :nearest_station, "最寄駅"
+  = f.search_field :nearest_station_eq
+  = f.label :rent, "家賃予算"
+  = f.search_field :rent_lteq
+  = f.submit "検索"
 -@rooms.each do |room|
   =link_to room.name, user_room_path(room.id)
   =room.address
-
 =link_to 'トップへ戻る', user_root_path
