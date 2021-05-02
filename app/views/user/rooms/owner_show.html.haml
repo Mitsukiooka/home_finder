@@ -1,0 +1,6 @@
+.body
+  %h1
+    #{@owner.owner_profile.name}
+  =@owner.owner_profile.country
+  =@owner.owner_profile.comment
+  =link_to '戻る', user_rooms_path

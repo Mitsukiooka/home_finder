@@ -23,6 +23,9 @@ Rails.application.routes.draw do
         post 'create' => 'rooms#application_create', :as => 'application_create'
         get 'sent' => 'rooms#application_sent', :as => 'application_sent'
       end
+      collection do
+        get 'owner_show'
+      end
     end
     resources :user_profiles, except: [:index]
   end

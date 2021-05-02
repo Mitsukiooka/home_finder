@@ -4,6 +4,9 @@
   =@application.user_name
   =@application.user_email
   =@application.comment
+  =@application.user.user_profile.gender
+  =@application.user.user_profile.age
+  =@application.user.user_profile.description
 .form
   =bootstrap_form_with model: [:owner, @application], url: application_update_owner_room_path(@room.id, application_id: @application.id), method: :post, local: true do |f|
     =f.select :status, Application.status.options

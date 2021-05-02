@@ -1,5 +1,5 @@
 class User::RoomsController < User::ApplicationController
-  before_action :set_room, except: [:index]
+  before_action :set_room, except: [:index, :owner_show]
   def index
     @q = Room.all.by_status.by_country(current_user.user_profile.country).ransack(params[:q])
     @rooms = @q.result(distinct: true)
@@ -24,6 +24,10 @@ class User::RoomsController < User::ApplicationController
   end
 
   def application_sent
+  end
+
+  def owner_show
+    @owner = Owner.find(params[:owner_id])
   end
 
   private
