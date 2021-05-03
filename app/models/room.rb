@@ -4,6 +4,7 @@ class Room < ApplicationRecord
   belongs_to :owner
   has_many :applications
   has_many_attached :images
+  has_one_attached :outside_image
 
   validates :name, presence: true
   validates :address, presence: true

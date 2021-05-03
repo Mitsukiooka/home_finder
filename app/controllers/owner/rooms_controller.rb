@@ -66,6 +66,7 @@ class Owner::RoomsController < Owner::ApplicationController
       :comment,
       :status,
       :country,
+      :outside_image,
       images:[]
     )
   end
