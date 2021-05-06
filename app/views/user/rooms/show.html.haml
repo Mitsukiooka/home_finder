@@ -46,7 +46,7 @@
             .swiper-wrapper
               -@room.images.each do |image|
                 .carousel-item-b.swiper-slide
-                  =image_tag image
+                  =image_tag image.variant(gravity: :center, resize:"1920x960^", crop:"1920x960+0+0").processed
           .property-single-carousel-pagination.carousel-pagination
     .row
       .col-sm-12
