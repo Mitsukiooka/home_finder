@@ -1,11 +1,48 @@
-%h1
-  #{@user_profile.name}
-=@user_profile.name
-=@user_profile.gender
-=@user_profile.age
-=@user_profile.country
-=@user_profile.email
-=@user_profile.phone_number
-=@user_profile.description
+%section.agent-single
+  .container
+    .row
+      .col-sm-12
+        .row
+          .col-md-6
+            -if @user_profile.image.present?
+              .agent-avatar-box
+                =image_tag @user_profile.image.variant(gravity: :center, resize:"546x612^", crop:"546x612+0+0").processed, class: 'gent-avatar img-fluid' 
+          .col-md-5.section-md-t3
+            .agent-info-box
+              .agent-title
+                .title-box-d
+                  %h3.title-d
+                    #{@user_profile.name}
+                    %br
+                    #{@user_profile.gender}/
+                    %span
+                    #{@user_profile.age}
+              .agent-content.mb-3
+                %p.content-d.color-text-a
+                  #{@user_profile.description}
+                .info-agents.color-a
+                  %p
+                    %strong Phone:
+                    %span.color-text-a #{@user_profile.phone_number}
+                  %p
+                    %strong Email:
+                    %span.color-text-a #{@user_profile.email}
+                  %p
+                    %strong Country:
+                    %span.color-text-a #{@user_profile.country}
+              .socials-footer
+                %ul.list-inline
+                  %li.list-inline-item
+                    %a.link-one{:href => "#"}
+                      %i.bi.bi-facebook{"aria-hidden" => "true"}
+                  %li.list-inline-item
+                    %a.link-one{:href => "#"}
+                      %i.bi.bi-twitter{"aria-hidden" => "true"}
+                  %li.list-inline-item
+                    %a.link-one{:href => "#"}
+                      %i.bi.bi-instagram{"aria-hidden" => "true"}
+                  %li.list-inline-item
+                    %a.link-one{:href => "#"}
+                      %i.bi.bi-linkedin{"aria-hidden" => "true"}
 =link_to 'ユーザー情報を編集', edit_user_user_profile_path(@user_profile.id)
 =link_to 'トップへ戻る', user_root_path
