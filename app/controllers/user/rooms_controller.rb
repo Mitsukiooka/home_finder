@@ -1,7 +1,7 @@
 class User::RoomsController < User::ApplicationController
   before_action :set_room, except: [:index, :owner_show]
   def index
-    @q = Room.with_attached_outside_image.by_status.by_country(current_user.user_profile.country).page(params[:page]).per(6).ransack(params[:q])
+    @q = Room.includes(:owner).references(:owner).with_attached_outside_image.by_status.by_country(current_user.user_profile.country).page(params[:page]).per(6).ransack(params[:q])
     @rooms = @q.result(distinct: true)
   end
 
