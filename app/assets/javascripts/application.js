@@ -7,3 +7,4 @@
 //= require php-email-form/validate
 //= require swiper/swiper-bundle.min
 //= require main
+//= require common

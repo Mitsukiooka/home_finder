@@ -1,12 +1,20 @@
 class User::RoomsController < User::ApplicationController
-  before_action :set_room, except: [:index, :owner_show]
+  before_action :set_room, except: [:index, :owner_show, :suggest]
   def index
-    @q = Room.includes(:owner).references(:owner).with_attached_outside_image.by_status.by_country(current_user.user_profile.country).page(params[:page]).per(6).ransack(params[:q])
+    @q = Room.preload(:owner).with_attached_outside_image.by_status.by_country(current_user.user_profile.country).page(params[:page]).per(6).ransack(params[:q])
     @rooms = @q.result(distinct: true)
   end
 
   def show
     @application = Application.find_by(user_id: current_user.id, room_id: @room.id)
+  end
+
+  def suggest
+    @rooms = Room.where('name LIKE(?)', "%#{params[:name]}%")
+    respond_to do |format|
+      format.html { redirect_to :user_rooms }
+      format.json { render json: @rooms}
+    end
   end
 
   def application_new

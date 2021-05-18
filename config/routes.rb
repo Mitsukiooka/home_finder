@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   namespace :user do
     root to: "home#index"
     resources :rooms, only: [:index, :show] do
+      get 'suggest', on: :collection, defaults: { format: 'json' }
       member do
         get 'application_new'
         post 'create' => 'rooms#application_create', :as => 'application_create'
