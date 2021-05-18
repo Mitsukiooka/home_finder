@@ -1,24 +1,57 @@
-%h1
-  Home Finder
-.menu
-  -if user_signed_in?
-    -if @applications.present?
-      -@applications.each do |application|
-        =link_to "#{application.room.name}", user_room_path(application.room.id)
-    -if current_user.user_profile.present?
-      %h2
-        =link_to '公開中の貸し部屋一覧', user_rooms_path
-      %h2
-        =link_to 'ユーザー情報', user_user_profile_path(current_user.user_profile.id)
-    -else
-      %h2
-        =link_to 'ユーザー情報作成', new_user_user_profile_path
-    =link_to 'ログアウト', destroy_user_session_path
-  -else
-    %h2
-      = link_to 'ユーザー登録', new_user_registration_path
-    %h2
-      = link_to 'ユーザーログイン', new_user_session_path
-.body
-  %p
-    ユーザー用ページ
+-# %h1
+-#   Home Finder
+-# .menu
+-#   -if user_signed_in?
+-#     -if @applications.present?
+-#       -@applications.each do |application|
+-#         =link_to "#{application.room.name}", user_room_path(application.room.id)
+-#     -if current_user.user_profile.present?
+-#       %h2
+-#         =link_to '公開中の貸し部屋一覧', user_rooms_path
+-#       %h2
+-#         =link_to 'ユーザー情報', user_user_profile_path(current_user.user_profile.id)
+-#     -else
+-#       %h2
+-#         =link_to 'ユーザー情報作成', new_user_user_profile_path
+-#     =link_to 'ログアウト', destroy_user_session_path
+-#   -else
+-#     %h2
+-#       = link_to 'ユーザー登録', new_user_registration_path
+-#     %h2
+-#       = link_to 'ユーザーログイン', new_user_session_path
+%section.section-services.section-t8
+  .container
+    .row
+      .col-md-12
+        .title-wrap.d-flex.justify-content-between
+          .title-box
+            %h2.title-a Home Finder
+    -if user_signed_in?
+      -if current_user.user_profile.present?
+        .row
+          .col-md-12
+            .card-box-c.foo
+              .card-header-c.d-flex
+                .card-box-ico
+                  %span.bi.bi-cart
+                .card-title-c.align-self-center
+                  %h2.title-c 
+                    =link_to '公開中の貸し部屋一覧', user_rooms_path
+              .card-footer-c
+                .link-c.link-icon
+                  =link_to 'ユーザー情報', user_user_profile_path(current_user.user_profile.id)
+                  %span.bi.bi-chevron-right
+      -else
+        .row
+          .col-md-6
+            .card-box-c.foo
+              .card-header-c.d-flex
+                .card-box-ico
+                  %span.bi.bi-card-checklist
+                .card-title-c.align-self-center
+                  %h2.title-c 
+                    =link_to 'ユーザー情報作成', new_user_user_profile_path
+              .card-footer-c
+                .link-c.link-icon
+                  =link_to 'ログアウト', destroy_user_session_path
+                  %span.bi.bi-chevron-right

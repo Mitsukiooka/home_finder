@@ -3,3 +3,8 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
+//= require bootstrap/js/bootstrap.bundle.min
+//= require php-email-form/validate
+//= require swiper/swiper-bundle.min
+//= require main
+//= require common

@@ -1,21 +1,45 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "devise/shared/links"
+%section.contact
+  .container
+    .row
+      .col-sm-12.section-t8
+        .row
+          .col-md-12
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = render "devise/shared/error_messages", resource: resource
+              .row
+                .col-md-4.mb-3
+                  .form-group
+                    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control form-control-lg form-control-a'
+                .col-md-4.mb-3
+                  .form-group
+                    = f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'form-control form-control-lg form-control-a'
+                    - if @minimum_password_length
+                      %em
+                        (#{@minimum_password_length} characters minimum)
+                .col-md-4.mb-3
+                  .form-group
+                    = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Password Confirmation', class: 'form-control form-control-lg form-control-a'
+                .col-md-12.text-center
+                  = f.submit "Sign Up", class: 'btn btn-a'
 = render "devise/shared/links"

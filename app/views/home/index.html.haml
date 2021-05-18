@@ -1,11 +1,42 @@
-%h1
-  Home Finder
-.menu
-  %h2
-    = link_to 'オーナーログイン', new_owner_session_path
-  %h2
-    = link_to 'オーナー登録', new_owner_registration_path
-  %h2
-    = link_to 'ユーザーログイン', new_user_session_path
-  %h2
-    = link_to 'ユーザー登録', new_user_registration_path
+-# %h2
+-#   = link_to 'オーナーログイン', new_owner_session_path
+-# %h2
+-#   = link_to 'オーナー登録', new_owner_registration_path
+-# %h2
+-#   = link_to 'ユーザーログイン', new_user_session_path
+-# %h2
+-#   = link_to 'ユーザー登録', new_user_registration_path
+%section.section-services.section-t8
+  .container
+    .row
+      .col-md-12
+        .title-wrap.d-flex.justify-content-between
+          .title-box
+            %h2.title-a Home Finder
+    .row
+      .col-md-6
+        .card-box-c.foo
+          .card-header-c.d-flex
+            .card-box-ico
+              %span.bi.bi-cart
+            .card-title-c.align-self-center
+              %h2.title-c 
+                =link_to 'オーナーログイン', new_owner_session_path
+          .card-footer-c
+            .link-c.link-icon
+              =link_to 'オーナー登録はこちら', new_owner_registration_path
+              %span.bi.bi-chevron-right
+      .col-md-6
+        .card-box-c.foo
+          .card-header-c.d-flex
+            .card-box-ico
+              %span.bi.bi-card-checklist
+            .card-title-c.align-self-center
+              %h2.title-c 
+                =link_to 'ユーザーログイン', new_user_session_path
+          .card-footer-c
+            .link-c.link-icon
+              =link_to 'ユーザー登録はこちら', new_user_registration_path
+              %span.bi.bi-chevron-right
+/ End Services Section
+/ ======= Latest Properties Section =======

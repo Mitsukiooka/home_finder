@@ -1,0 +1,789 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title EstateAgency Bootstrap Template - Index
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "keywords"}/
+    / Favicons
+    %link{:href => "assets/img/favicon.png", :rel => "icon"}/
+    %link{:href => "assets/img/apple-touch-icon.png", :rel => "apple-touch-icon"}/
+    / Google Fonts
+    %link{:href => "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700", :rel => "stylesheet"}/
+    / Vendor CSS Files
+    %link{:href => "assets/vendor/animate.css/animate.min.css", :rel => "stylesheet"}/
+    %link{:href => "assets/vendor/bootstrap/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "assets/vendor/bootstrap-icons/bootstrap-icons.css", :rel => "stylesheet"}/
+    %link{:href => "assets/vendor/swiper/swiper-bundle.min.css", :rel => "stylesheet"}/
+    / Template Main CSS File
+    %link{:href => "assets/css/style.css", :rel => "stylesheet"}/
+    /
+      \=======================================================
+      * Template Name: EstateAgency - v4.1.0
+      * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
+      * Author: BootstrapMade.com
+      * License: https://bootstrapmade.com/license/
+      \========================================================
+  %body
+    / ======= Property Search Section =======
+    .click-closed
+    / / Form Search Star /
+    .box-collapse
+      .title-box-d
+        %h3.title-d Search Property
+      %span.close-box-collapse.right-boxed.bi.bi-x
+      .box-collapse-wrap.form
+        %form.form-a
+          .row
+            .col-md-12.mb-2
+              .form-group
+                %label.pb-2{:for => "Type"} Keyword
+                %input.form-control.form-control-lg.form-control-a{:placeholder => "Keyword", :type => "text"}/
+            .col-md-6.mb-2
+              .form-group.mt-3
+                %label.pb-2{:for => "Type"} Type
+                %select#Type.form-control.form-select.form-control-a
+                  %option All Type
+                  %option For Rent
+                  %option For Sale
+                  %option Open House
+            .col-md-6.mb-2
+              .form-group.mt-3
+                %label.pb-2{:for => "city"} City
+                %select#city.form-control.form-select.form-control-a
+                  %option All City
+                  %option Alabama
+                  %option Arizona
+                  %option California
+                  %option Colorado
+            .col-md-6.mb-2
+              .form-group.mt-3
+                %label.pb-2{:for => "bedrooms"} Bedrooms
+                %select#bedrooms.form-control.form-select.form-control-a
+                  %option Any
+                  %option 01
+                  %option 02
+                  %option 03
+            .col-md-6.mb-2
+              .form-group.mt-3
+                %label.pb-2{:for => "garages"} Garages
+                %select#garages.form-control.form-select.form-control-a
+                  %option Any
+                  %option 01
+                  %option 02
+                  %option 03
+                  %option 04
+            .col-md-6.mb-2
+              .form-group.mt-3
+                %label.pb-2{:for => "bathrooms"} Bathrooms
+                %select#bathrooms.form-control.form-select.form-control-a
+                  %option Any
+                  %option 01
+                  %option 02
+                  %option 03
+            .col-md-6.mb-2
+              .form-group.mt-3
+                %label.pb-2{:for => "price"} Min Price
+                %select#price.form-control.form-select.form-control-a
+                  %option Unlimite
+                  %option $50,000
+                  %option $100,000
+                  %option $150,000
+                  %option $200,000
+            .col-md-12
+              %button.btn.btn-b{:type => "submit"} Search Property
+    / End Property Search Section
+    \>
+    / ======= Header/Navbar =======
+    %nav.navbar.navbar-default.navbar-trans.navbar-expand-lg.fixed-top
+      .container
+        %button.navbar-toggler.collapsed{"aria-controls" => "navbarDefault", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarDefault", "data-bs-toggle" => "collapse", :type => "button"}
+          %span
+          %span
+          %span
+        %a.navbar-brand.text-brand{:href => "index.html"}
+          Estate
+          %span.color-b Agency
+        #navbarDefault.navbar-collapse.collapse.justify-content-center
+          %ul.navbar-nav
+            %li.nav-item
+              %a.nav-link.active{:href => "index.html"} Home
+            %li.nav-item
+              %a.nav-link{:href => "about.html"} About
+            %li.nav-item
+              %a.nav-link{:href => "property-grid.html"} Property
+            %li.nav-item
+              %a.nav-link{:href => "blog-grid.html"} Blog
+            %li.nav-item.dropdown
+              %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-bs-toggle" => "dropdown", :href => "#", :role => "button"} Pages
+              .dropdown-menu
+                %a.dropdown-item{:href => "property-single.html"} Property Single
+                %a.dropdown-item{:href => "blog-single.html"} Blog Single
+                %a.dropdown-item{:href => "agents-grid.html"} Agents Grid
+                %a.dropdown-item{:href => "agent-single.html"} Agent Single
+            %li.nav-item
+              %a.nav-link{:href => "contact.html"} Contact
+        %button.btn.btn-b-n.navbar-toggle-box.navbar-toggle-box-collapse{"data-bs-target" => "#navbarTogglerDemo01", "data-bs-toggle" => "collapse", :type => "button"}
+          %i.bi.bi-search
+    / End Header/Navbar
+    / ======= Intro Section =======
+    .intro.intro-carousel.swiper-container.position-relative
+      .swiper-wrapper
+        .swiper-slide.carousel-item-a.intro-item.bg-image{:style => "background-image: url(assets/img/slide-1.jpg)"}
+          .overlay.overlay-a
+          .intro-content.display-table
+            .table-cell
+              .container
+                .row
+                  .col-lg-8
+                    .intro-body
+                      %p.intro-title-top
+                        Doral, Florida
+                        %br/
+                        78345
+                      %h1.intro-title.mb-4
+                        %span.color-b 204
+                        Mount
+                        %br/
+                        Olive Road Two
+                      %p.intro-subtitle.intro-price
+                        %a{:href => "#"}
+                          %span.price-a rent | $ 12.000
+        .swiper-slide.carousel-item-a.intro-item.bg-image{:style => "background-image: url(assets/img/slide-2.jpg)"}
+          .overlay.overlay-a
+          .intro-content.display-table
+            .table-cell
+              .container
+                .row
+                  .col-lg-8
+                    .intro-body
+                      %p.intro-title-top
+                        Doral, Florida
+                        %br/
+                        78345
+                      %h1.intro-title.mb-4
+                        %span.color-b 204
+                        Rino
+                        %br/
+                        Venda Road Five
+                      %p.intro-subtitle.intro-price
+                        %a{:href => "#"}
+                          %span.price-a rent | $ 12.000
+        .swiper-slide.carousel-item-a.intro-item.bg-image{:style => "background-image: url(assets/img/slide-3.jpg)"}
+          .overlay.overlay-a
+          .intro-content.display-table
+            .table-cell
+              .container
+                .row
+                  .col-lg-8
+                    .intro-body
+                      %p.intro-title-top
+                        Doral, Florida
+                        %br/
+                        78345
+                      %h1.intro-title.mb-4
+                        %span.color-b 204
+                        Alira
+                        %br/
+                        Roan Road One
+                      %p.intro-subtitle.intro-price
+                        %a{:href => "#"}
+                          %span.price-a rent | $ 12.000
+      .swiper-pagination
+    / End Intro Section
+    %main#main
+      / ======= Services Section =======
+      %section.section-services.section-t8
+        .container
+          .row
+            .col-md-12
+              .title-wrap.d-flex.justify-content-between
+                .title-box
+                  %h2.title-a Our Services
+          .row
+            .col-md-4
+              .card-box-c.foo
+                .card-header-c.d-flex
+                  .card-box-ico
+                    %span.bi.bi-cart
+                  .card-title-c.align-self-center
+                    %h2.title-c Lifestyle
+                .card-body-c
+                  %p.content-c
+                    Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
+                    convallis a pellentesque
+                    nec, egestas non nisi.
+                .card-footer-c
+                  %a.link-c.link-icon{:href => "#"}
+                    Read more
+                    %span.bi.bi-chevron-right
+            .col-md-4
+              .card-box-c.foo
+                .card-header-c.d-flex
+                  .card-box-ico
+                    %span.bi.bi-calendar4-week
+                  .card-title-c.align-self-center
+                    %h2.title-c Loans
+                .card-body-c
+                  %p.content-c
+                    Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit
+                    aliquet elit, eget tincidunt
+                    nibh pulvinar a.
+                .card-footer-c
+                  %a.link-c.link-icon{:href => "#"}
+                    Read more
+                    %span.bi.bi-calendar4-week
+            .col-md-4
+              .card-box-c.foo
+                .card-header-c.d-flex
+                  .card-box-ico
+                    %span.bi.bi-card-checklist
+                  .card-title-c.align-self-center
+                    %h2.title-c Sell
+                .card-body-c
+                  %p.content-c
+                    Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
+                    convallis a pellentesque
+                    nec, egestas non nisi.
+                .card-footer-c
+                  %a.link-c.link-icon{:href => "#"}
+                    Read more
+                    %span.bi.bi-chevron-right
+      / End Services Section
+      / ======= Latest Properties Section =======
+      %section.section-property.section-t8
+        .container
+          .row
+            .col-md-12
+              .title-wrap.d-flex.justify-content-between
+                .title-box
+                  %h2.title-a Latest Properties
+                .title-link
+                  %a{:href => "property-grid.html"}
+                    All Property
+                    %span.bi.bi-chevron-right
+          #property-carousel.swiper-container
+            .swiper-wrapper
+              .carousel-item-b.swiper-slide
+                .card-box-a.card-shadow
+                  .img-box-a
+                    %img.img-a.img-fluid{:alt => "", :src => "assets/img/property-6.jpg"}/
+                  .card-overlay
+                    .card-overlay-a-content
+                      .card-header-a
+                        %h2.card-title-a
+                          %a{:href => "property-single.html"}
+                            206 Mount
+                            %br/
+                            Olive Road Two
+                      .card-body-a
+                        .price-box.d-flex
+                          %span.price-a rent | $ 12.000
+                        %a.link-a{:href => "#"}
+                          Click here to view
+                          %span.bi.bi-chevron-right
+                      .card-footer-a
+                        %ul.card-info.d-flex.justify-content-around
+                          %li
+                            %h4.card-info-title Area
+                            %span
+                              340m
+                              %sup 2
+                          %li
+                            %h4.card-info-title Beds
+                            %span 2
+                          %li
+                            %h4.card-info-title Baths
+                            %span 4
+                          %li
+                            %h4.card-info-title Garages
+                            %span 1
+              / End carousel item
+              .carousel-item-b.swiper-slide
+                .card-box-a.card-shadow
+                  .img-box-a
+                    %img.img-a.img-fluid{:alt => "", :src => "assets/img/property-3.jpg"}/
+                  .card-overlay
+                    .card-overlay-a-content
+                      .card-header-a
+                        %h2.card-title-a
+                          %a{:href => "property-single.html"}
+                            157 West
+                            %br/
+                            Central Park
+                      .card-body-a
+                        .price-box.d-flex
+                          %span.price-a rent | $ 12.000
+                        %a.link-a{:href => "property-single.html"}
+                          Click here to view
+                          %span.bi.bi-chevron-right
+                      .card-footer-a
+                        %ul.card-info.d-flex.justify-content-around
+                          %li
+                            %h4.card-info-title Area
+                            %span
+                              340m
+                              %sup 2
+                          %li
+                            %h4.card-info-title Beds
+                            %span 2
+                          %li
+                            %h4.card-info-title Baths
+                            %span 4
+                          %li
+                            %h4.card-info-title Garages
+                            %span 1
+              / End carousel item
+              .carousel-item-b.swiper-slide
+                .card-box-a.card-shadow
+                  .img-box-a
+                    %img.img-a.img-fluid{:alt => "", :src => "assets/img/property-7.jpg"}/
+                  .card-overlay
+                    .card-overlay-a-content
+                      .card-header-a
+                        %h2.card-title-a
+                          %a{:href => "property-single.html"}
+                            245 Azabu
+                            %br/
+                            Nishi Park let
+                      .card-body-a
+                        .price-box.d-flex
+                          %span.price-a rent | $ 12.000
+                        %a.link-a{:href => "property-single.html"}
+                          Click here to view
+                          %span.bi.bi-chevron-right
+                      .card-footer-a
+                        %ul.card-info.d-flex.justify-content-around
+                          %li
+                            %h4.card-info-title Area
+                            %span
+                              340m
+                              %sup 2
+                          %li
+                            %h4.card-info-title Beds
+                            %span 2
+                          %li
+                            %h4.card-info-title Baths
+                            %span 4
+                          %li
+                            %h4.card-info-title Garages
+                            %span 1
+              / End carousel item
+              .carousel-item-b.swiper-slide
+                .card-box-a.card-shadow
+                  .img-box-a
+                    %img.img-a.img-fluid{:alt => "", :src => "assets/img/property-10.jpg"}/
+                  .card-overlay
+                    .card-overlay-a-content
+                      .card-header-a
+                        %h2.card-title-a
+                          %a{:href => "property-single.html"}
+                            204 Montal
+                            %br/
+                            South Bela Two
+                      .card-body-a
+                        .price-box.d-flex
+                          %span.price-a rent | $ 12.000
+                        %a.link-a{:href => "property-single.html"}
+                          Click here to view
+                          %span.bi.bi-chevron-right
+                      .card-footer-a
+                        %ul.card-info.d-flex.justify-content-around
+                          %li
+                            %h4.card-info-title Area
+                            %span
+                              340m
+                              %sup 2
+                          %li
+                            %h4.card-info-title Beds
+                            %span 2
+                          %li
+                            %h4.card-info-title Baths
+                            %span 4
+                          %li
+                            %h4.card-info-title Garages
+                            %span 1
+              / End carousel item
+          .propery-carousel-pagination.carousel-pagination
+      / End Latest Properties Section
+      / ======= Agents Section =======
+      %section.section-agents.section-t8
+        .container
+          .row
+            .col-md-12
+              .title-wrap.d-flex.justify-content-between
+                .title-box
+                  %h2.title-a Best Agents
+                .title-link
+                  %a{:href => "agents-grid.html"}
+                    All Agents
+                    %span.bi.bi-chevron-right
+          .row
+            .col-md-4
+              .card-box-d
+                .card-img-d
+                  %img.img-d.img-fluid{:alt => "", :src => "assets/img/agent-4.jpg"}/
+                .card-overlay.card-overlay-hover
+                  .card-header-d
+                    .card-title-d.align-self-center
+                      %h3.title-d
+                        %a.link-two{:href => "agent-single.html"}
+                          Margaret Sotillo
+                          %br/
+                          Escala
+                  .card-body-d
+                    %p.content-d.color-text-a
+                      Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                    .info-agents.color-a
+                      %p
+                        %strong Phone:
+                        +54 356 945234
+                      %p
+                        %strong Email:
+                        agents@example.com
+                  .card-footer-d
+                    .socials-footer.d-flex.justify-content-center
+                      %ul.list-inline
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-facebook{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-twitter{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-instagram{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-linkedin{"aria-hidden" => "true"}
+            .col-md-4
+              .card-box-d
+                .card-img-d
+                  %img.img-d.img-fluid{:alt => "", :src => "assets/img/agent-1.jpg"}/
+                .card-overlay.card-overlay-hover
+                  .card-header-d
+                    .card-title-d.align-self-center
+                      %h3.title-d
+                        %a.link-two{:href => "agent-single.html"}
+                          Stiven Spilver
+                          %br/
+                          Darw
+                  .card-body-d
+                    %p.content-d.color-text-a
+                      Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                    .info-agents.color-a
+                      %p
+                        %strong Phone:
+                        +54 356 945234
+                      %p
+                        %strong Email:
+                        agents@example.com
+                  .card-footer-d
+                    .socials-footer.d-flex.justify-content-center
+                      %ul.list-inline
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-facebook{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-twitter{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-instagram{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-linkedin{"aria-hidden" => "true"}
+            .col-md-4
+              .card-box-d
+                .card-img-d
+                  %img.img-d.img-fluid{:alt => "", :src => "assets/img/agent-5.jpg"}/
+                .card-overlay.card-overlay-hover
+                  .card-header-d
+                    .card-title-d.align-self-center
+                      %h3.title-d
+                        %a.link-two{:href => "agent-single.html"}
+                          Emma Toledo
+                          %br/
+                          Cascada
+                  .card-body-d
+                    %p.content-d.color-text-a
+                      Sed porttitor lectus nibh, Cras ultricies ligula sed magna dictum porta two.
+                    .info-agents.color-a
+                      %p
+                        %strong Phone:
+                        +54 356 945234
+                      %p
+                        %strong Email:
+                        agents@example.com
+                  .card-footer-d
+                    .socials-footer.d-flex.justify-content-center
+                      %ul.list-inline
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-facebook{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-twitter{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-instagram{"aria-hidden" => "true"}
+                        %li.list-inline-item
+                          %a.link-one{:href => "#"}
+                            %i.bi.bi-linkedin{"aria-hidden" => "true"}
+      / End Agents Section
+      / ======= Latest News Section =======
+      %section.section-news.section-t8
+        .container
+          .row
+            .col-md-12
+              .title-wrap.d-flex.justify-content-between
+                .title-box
+                  %h2.title-a Latest News
+                .title-link
+                  %a{:href => "blog-grid.html"}
+                    All News
+                    %span.bi.bi-chevron-right
+          #news-carousel.swiper-container
+            .swiper-wrapper
+              .carousel-item-c.swiper-slide
+                .card-box-b.card-shadow.news-box
+                  .img-box-b
+                    %img.img-b.img-fluid{:alt => "", :src => "assets/img/post-2.jpg"}/
+                  .card-overlay
+                    .card-header-b
+                      .card-category-b
+                        %a.category-b{:href => "#"} House
+                      .card-title-b
+                        %h2.title-2
+                          %a{:href => "blog-single.html"}
+                            House is comming
+                            %br/
+                            new
+                      .card-date
+                        %span.date-b 18 Sep. 2017
+              / End carousel item
+              .carousel-item-c.swiper-slide
+                .card-box-b.card-shadow.news-box
+                  .img-box-b
+                    %img.img-b.img-fluid{:alt => "", :src => "assets/img/post-5.jpg"}/
+                  .card-overlay
+                    .card-header-b
+                      .card-category-b
+                        %a.category-b{:href => "#"} Travel
+                      .card-title-b
+                        %h2.title-2
+                          %a{:href => "blog-single.html"}
+                            Travel is comming
+                            %br/
+                            new
+                      .card-date
+                        %span.date-b 18 Sep. 2017
+              / End carousel item
+              .carousel-item-c.swiper-slide
+                .card-box-b.card-shadow.news-box
+                  .img-box-b
+                    %img.img-b.img-fluid{:alt => "", :src => "assets/img/post-7.jpg"}/
+                  .card-overlay
+                    .card-header-b
+                      .card-category-b
+                        %a.category-b{:href => "#"} Park
+                      .card-title-b
+                        %h2.title-2
+                          %a{:href => "blog-single.html"}
+                            Park is comming
+                            %br/
+                            new
+                      .card-date
+                        %span.date-b 18 Sep. 2017
+              / End carousel item
+              .carousel-item-c.swiper-slide
+                .card-box-b.card-shadow.news-box
+                  .img-box-b
+                    %img.img-b.img-fluid{:alt => "", :src => "assets/img/post-3.jpg"}/
+                  .card-overlay
+                    .card-header-b
+                      .card-category-b
+                        %a.category-b{:href => "#"} Travel
+                      .card-title-b
+                        %h2.title-2
+                          %a{:href => "#"}
+                            Travel is comming
+                            %br/
+                            new
+                      .card-date
+                        %span.date-b 18 Sep. 2017
+              / End carousel item
+          .news-carousel-pagination.carousel-pagination
+      / End Latest News Section
+      / ======= Testimonials Section =======
+      %section.section-testimonials.section-t8.nav-arrow-a
+        .container
+          .row
+            .col-md-12
+              .title-wrap.d-flex.justify-content-between
+                .title-box
+                  %h2.title-a Testimonials
+          #testimonial-carousel.swiper-container
+            .swiper-wrapper
+              .carousel-item-a.swiper-slide
+                .testimonials-box
+                  .row
+                    .col-sm-12.col-md-6
+                      .testimonial-img
+                        %img.img-fluid{:alt => "", :src => "assets/img/testimonial-1.jpg"}/
+                    .col-sm-12.col-md-6
+                      .testimonial-ico
+                        %i.bi.bi-chat-quote-fill
+                      .testimonials-content
+                        %p.testimonial-text
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
+                          debitis hic ber quibusdam
+                          voluptatibus officia expedita corpori.
+                      .testimonial-author-box
+                        %img.testimonial-avatar{:alt => "", :src => "assets/img/mini-testimonial-1.jpg"}/
+                        %h5.testimonial-author Albert & Erika
+              / End carousel item
+              .carousel-item-a.swiper-slide
+                .testimonials-box
+                  .row
+                    .col-sm-12.col-md-6
+                      .testimonial-img
+                        %img.img-fluid{:alt => "", :src => "assets/img/testimonial-2.jpg"}/
+                    .col-sm-12.col-md-6
+                      .testimonial-ico
+                        %i.bi.bi-chat-quote-fill
+                      .testimonials-content
+                        %p.testimonial-text
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium
+                          debitis hic ber quibusdam
+                          voluptatibus officia expedita corpori.
+                      .testimonial-author-box
+                        %img.testimonial-avatar{:alt => "", :src => "assets/img/mini-testimonial-2.jpg"}/
+                        %h5.testimonial-author Pablo & Emma
+              / End carousel item
+          .testimonial-carousel-pagination.carousel-pagination
+      / End Testimonials Section
+    / End #main
+    / ======= Footer =======
+    %section.section-footer
+      .container
+        .row
+          .col-sm-12.col-md-4
+            .widget-a
+              .w-header-a
+                %h3.w-title-a.text-brand EstateAgency
+              .w-body-a
+                %p.w-text-a.color-text-a
+                  Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
+                  sed aute irure.
+              .w-footer-a
+                %ul.list-unstyled
+                  %li.color-a
+                    %span.color-text-a Phone .
+                    contact@example.com
+                  %li.color-a
+                    %span.color-text-a Email .
+                    +54 356 945234
+          .col-sm-12.col-md-4.section-md-t3
+            .widget-a
+              .w-header-a
+                %h3.w-title-a.text-brand The Company
+              .w-body-a
+                .w-body-a
+                  %ul.list-unstyled
+                    %li.item-list-a
+                      %i.bi.bi-chevron-right
+                      %a{:href => "#"} Site Map
+                    %li.item-list-a
+                      %i.bi.bi-chevron-right
+                      %a{:href => "#"} Legal
+                    %li.item-list-a
+                      %i.bi.bi-chevron-right
+                      %a{:href => "#"} Agent Admin
+                    %li.item-list-a
+                      %i.bi.bi-chevron-right
+                      %a{:href => "#"} Careers
+                    %li.item-list-a
+                      %i.bi.bi-chevron-right
+                      %a{:href => "#"} Affiliate
+                    %li.item-list-a
+                      %i.bi.bi-chevron-right
+                      %a{:href => "#"} Privacy Policy
+          .col-sm-12.col-md-4.section-md-t3
+            .widget-a
+              .w-header-a
+                %h3.w-title-a.text-brand International sites
+              .w-body-a
+                %ul.list-unstyled
+                  %li.item-list-a
+                    %i.bi.bi-chevron-right
+                    %a{:href => "#"} Venezuela
+                  %li.item-list-a
+                    %i.bi.bi-chevron-right
+                    %a{:href => "#"} China
+                  %li.item-list-a
+                    %i.bi.bi-chevron-right
+                    %a{:href => "#"} Hong Kong
+                  %li.item-list-a
+                    %i.bi.bi-chevron-right
+                    %a{:href => "#"} Argentina
+                  %li.item-list-a
+                    %i.bi.bi-chevron-right
+                    %a{:href => "#"} Singapore
+                  %li.item-list-a
+                    %i.bi.bi-chevron-right
+                    %a{:href => "#"} Philippines
+    %footer
+      .container
+        .row
+          .col-md-12
+            %nav.nav-footer
+              %ul.list-inline
+                %li.list-inline-item
+                  %a{:href => "#"} Home
+                %li.list-inline-item
+                  %a{:href => "#"} About
+                %li.list-inline-item
+                  %a{:href => "#"} Property
+                %li.list-inline-item
+                  %a{:href => "#"} Blog
+                %li.list-inline-item
+                  %a{:href => "#"} Contact
+            .socials-a
+              %ul.list-inline
+                %li.list-inline-item
+                  %a{:href => "#"}
+                    %i.bi.bi-facebook{"aria-hidden" => "true"}
+                %li.list-inline-item
+                  %a{:href => "#"}
+                    %i.bi.bi-twitter{"aria-hidden" => "true"}
+                %li.list-inline-item
+                  %a{:href => "#"}
+                    %i.bi.bi-instagram{"aria-hidden" => "true"}
+                %li.list-inline-item
+                  %a{:href => "#"}
+                    %i.bi.bi-linkedin{"aria-hidden" => "true"}
+            .copyright-footer
+              %p.copyright.color-text-a
+                \© Copyright
+                %span.color-a EstateAgency
+                All Rights Reserved.
+            .credits
+              /
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
+              Designed by
+              %a{:href => "https://bootstrapmade.com/"} BootstrapMade
+    / End  Footer
+    #preloader
+    %a.back-to-top.d-flex.align-items-center.justify-content-center{:href => "#"}
+      %i.bi.bi-arrow-up-short
+    / Vendor JS Files
+    %script{:src => "assets/vendor/bootstrap/js/bootstrap.bundle.min.js"}
+    %script{:src => "assets/vendor/php-email-form/validate.js"}
+    %script{:src => "assets/vendor/swiper/swiper-bundle.min.js"}
+    / Template Main JS File
+    %script{:src => "assets/js/main.js"}

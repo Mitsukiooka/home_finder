@@ -1,14 +1,56 @@
-%h1
-  賃貸一覧
-=search_form_for [:user, @q] do |f|
-  = f.label :address, "住所"
-  = f.search_field :address_cont
-  = f.label :nearest_station, "最寄駅"
-  = f.search_field :nearest_station_eq
-  = f.label :rent, "家賃予算"
-  = f.search_field :rent_lteq
-  = f.submit "検索"
--@rooms.each do |room|
-  =link_to room.name, user_room_path(room.id)
-  =room.address
-=link_to 'トップへ戻る', user_root_path
+%section.section-property.section-t8
+  .container
+    .row
+      .col-md-12
+        .grid-option#search-form
+          %form
+          =search_form_for [:user, @q] do |f|
+            = f.label :name, "名前"
+            = f.search_field :name_cont, class: 'js-room-search'
+            = f.label :address, "住所"
+            = f.search_field :address_cont
+            = f.label :nearest_station, "最寄駅"
+            = f.search_field :nearest_station_eq
+            = f.label :rent, "家賃予算"
+            = f.search_field :rent_lteq
+            = f.submit "検索"
+          %ul.js-rooms
+            = render 'room_suggest'
+    #property-carousel.swiper-container
+      .swiper-wrapper
+        -@rooms.each do |room|
+          .carousel-item-b.swiper-slide
+            .card-box-a.card-shadow
+              .img-box-a
+                -if room.outside_image.present?
+                  =image_tag room.outside_image.variant(gravity: :center, resize:"356x475^", crop:"356x475+0+0").processed
+                -else
+                  =image_tag '/img/default.jpg', width: '356px', height: '475px'
+              .card-overlay
+                .card-overlay-a-content
+                  .card-header-a
+                    %h2.card-title-a
+                      =link_to room.name, user_room_path(room.id)
+                  .card-body-a
+                    .price-box.d-flex
+                      %span.price-a rent | #{room.rent}
+                    .link-a
+                      =link_to "Click here to view", user_room_path(room.id)
+                      %span.bi.bi-chevron-right
+                  .card-footer-a
+                    %ul.card-info.d-flex.justify-content-around
+                      %li
+                        %h4.card-info-title Country
+                        %span
+                          #{room.country}
+                      %li
+                        %h4.card-info-title Station
+                        %span 
+                          #{room.nearest_station}
+                      %li
+                        %h4.card-info-title Owner
+                        %span
+                          #{room.owner.owner_profile.name}
+    .propery-carousel-pagination.carousel-pagination
+      =paginate @rooms
+/ End Latest Properties Section

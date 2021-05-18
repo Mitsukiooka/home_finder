@@ -1,9 +1,44 @@
-=bootstrap_form_with model: [:user, @user_profile], local: true do |f|
-  =f.text_field :name
-  =f.text_field :gender
-  =f.text_field :country
-  =f.number_field :age
-  =f.email_field :email
-  =f.telephone_field :phone_number
-  =f.text_area :description
-  =f.submit
+-# =bootstrap_form_with model: [:user, @user_profile], local: true do |f|
+-#   =f.text_field :name
+-#   =f.text_field :gender
+-#   =f.text_field :country
+-#   =f.number_field :age
+-#   =f.email_field :email
+-#   =f.telephone_field :phone_number
+-#   =f.text_area :description
+-#   =f.submit
+
+%section.contact
+  .container
+    .row
+      .col-sm-12.section-t8
+        .row
+          .col-md-12
+            =bootstrap_form_with model: [:user, @user_profile], local: true do |f|
+              .row
+                .col-md-4.mb-3
+                  .form-group
+                    =f.text_field :name, autofocus: true, class: 'form-control form-control-lg form-control-a'
+                .col-md-4.mb-3
+                  .form-group
+                    =f.text_field :gender, class: 'form-control form-control-lg form-control-a'
+                .col-md-4.mb-3
+                  .form-group
+                    =f.text_field :country, class: 'form-control form-control-lg form-control-a'
+                .col-md-4.mb-3
+                  .form-group
+                    =f.number_field :age, class: 'form-control form-control-lg form-control-a'
+                .col-md-4.mb-3
+                  .form-group
+                    =f.email_field :email, class: 'form-control form-control-lg form-control-a'
+                .col-md-4.mb-3
+                  .form-group
+                    =f.telephone_field :phone_number, class: 'form-control form-control-lg form-control-a'
+                .col-md-12.mb-3
+                  .form-group
+                    =f.text_area :description, class: 'form-control form-control-lg form-control-a'
+                .col-md-12.mb-3
+                  .form-group
+                    =f.file_field :image, class: 'form-control form-control-lg form-control-a'
+                .col-md-12.text-center
+                  = f.submit "作成", class: 'btn btn-a'
